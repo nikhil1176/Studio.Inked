@@ -17,8 +17,8 @@ export const authOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        // Backend se check karo
-        const res = await fetch(`${API_URL}/api/auth/login`, {
+        // Backend se check karo/artist-portal
+        const res = await fetch(`${API_URL}/api/auth`, {
           method: 'POST',
           body: JSON.stringify(credentials),
           headers: { "Content-Type": "application/json" }
@@ -31,7 +31,7 @@ export const authOptions = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: '/login',
+    signIn: '/artist-portal',
   }
 };
 const handler = NextAuth(authOptions);

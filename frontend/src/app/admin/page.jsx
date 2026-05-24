@@ -319,7 +319,7 @@ function AdminNavbar({ bookings, session, filterStatus, setFilterStatus }) {
                         {/* Actions */}
                         <div className="p-2">
                           <button
-                            onClick={() => signOut({ callbackUrl: "/login" })}
+                            onClick={() => signOut({ callbackUrl: "/artist-portal" })}
                             className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-all duration-200 hover:bg-red-500/10 group cursor-pointer"
                           >
                             <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">

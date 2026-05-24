@@ -80,9 +80,7 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link href="/admin" className="hidden sm:block text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 text-neutral-400 hover:text-white transition-colors">
-              Artist Login
-            </Link>
+            
             <Link href="/book" className="bg-[#C5A059] text-black px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:shadow-[0_0_30px_rgba(197,160,89,0.5)] transition-all hover:scale-105">
               Book Now
             </Link>

@@ -147,7 +147,7 @@ export default function SignupPage() {
 
       if (data.success) {
         setSuccess("Account successfully created! Redirecting to login...");
-        setTimeout(() => router.push("/login"), 2000);
+        setTimeout(() => router.push("/artist-portal"), 2000);
       } else {
         setError(data.message || "Failed to create account.");
         setLoading(false);
