@@ -190,7 +190,7 @@ export default function SignupPage() {
                   "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01) 24%, rgba(0,0,0,0.1) 100%)",
               }}
             />
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d7b15d] to-transparent opacity-70" />
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#d7b15d] to-transparent opacity-70" />
             <div className="absolute left-1/2 top-0 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f2d28a]/80 bg-[#c9a059] shadow-[0_0_24px_rgba(197,160,89,0.7)]" />
 
             <div className="relative">
@@ -232,7 +232,7 @@ export default function SignupPage() {
                       required
                       value={name}
                       onChange={(event) => setName(event.target.value)}
-                      className="w-full rounded-2xl border border-white/6 bg-white/[0.03] py-3.5 pl-12 pr-4 text-[15px] text-white outline-none transition duration-300 placeholder:text-neutral-600 focus:border-[#d7b15d]/50 focus:bg-white/[0.05] focus:shadow-[0_0_0_1px_rgba(215,177,93,0.12)]"
+                      className="w-full rounded-2xl border border-white/6 bg-white/3.5 pl-12 pr-4 text-[15px] text-white outline-none transition duration-300 placeholder:text-neutral-600 focus:border-[#d7b15d]/50 focus:bg-white/5s:shadow-[0_0_0_1px_rgba(215,177,93,0.12)]"
                       placeholder="e.g. Nikhil Artist"
                     />
                   </div>
@@ -252,7 +252,7 @@ export default function SignupPage() {
                       autoComplete="email"
                       value={email}
                       onChange={(event) => setEmail(event.target.value)}
-                      className="w-full rounded-2xl border border-white/6 bg-white/[0.03] py-3.5 pl-12 pr-4 text-[15px] text-white outline-none transition duration-300 placeholder:text-neutral-600 focus:border-[#d7b15d]/50 focus:bg-white/[0.05] focus:shadow-[0_0_0_1px_rgba(215,177,93,0.12)]"
+                      className="w-full rounded-2xl border border-white/6 bg-white/3 py-3.5 pl-12 pr-4 text-[15px] text-white outline-none transition duration-300 placeholder:text-neutral-600 focus:border-[#d7b15d]/50 focus:bg-white/5s:shadow-[0_0_0_1px_rgba(215,177,93,0.12)]"
                       placeholder="artist@studioinked.com"
                     />
                   </div>
@@ -272,7 +272,7 @@ export default function SignupPage() {
                       autoComplete="new-password"
                       value={password}
                       onChange={(event) => setPassword(event.target.value)}
-                      className="w-full rounded-2xl border border-white/6 bg-white/[0.03] py-3.5 pl-12 pr-4 text-[15px] text-white outline-none transition duration-300 placeholder:text-neutral-600 focus:border-[#d7b15d]/50 focus:bg-white/[0.05] focus:shadow-[0_0_0_1px_rgba(215,177,93,0.12)]"
+                      className="w-full rounded-2xl border border-white/6 bg-white/3 py-3.5 pl-12 pr-4 text-[15px] text-white outline-none transition duration-300 placeholder:text-neutral-600 focus:border-[#d7b15d]/50 focus:bg-white/5 focus:shadow-[0_0_0_1px_rgba(215,177,93,0.12)]"
                       placeholder="••••••••"
                     />
                   </div>
@@ -281,24 +281,24 @@ export default function SignupPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="mt-2 w-full rounded-2xl border border-[#f1d18a]/40 bg-gradient-to-r from-[#b8860b] via-[#d7a61e] to-[#b8860b] px-4 py-3.5 text-[11px] font-black uppercase tracking-[0.35em] text-black shadow-[0_16px_36px_rgba(197,160,89,0.2)] transition duration-300 hover:translate-y-[-1px] hover:shadow-[0_18px_46px_rgba(197,160,89,0.28)] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="mt-2 w-full rounded-2xl border border-[#f1d18a]/40 bg-linear-to-r from-[#b8860b] via-[#d7a61e] to-[#b8860b] px-4 py-3.5 text-[11px] font-black uppercase tracking-[0.35em] text-black shadow-[0_16px_36px_rgba(197,160,89,0.2)] transition duration-300 hover:-translate-y-px hover:shadow-[0_18px_46px_rgba(197,160,89,0.28)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {loading ? "Registering..." : "Create Master Account"}
                 </button>
               </form>
 
               <div className="mt-7 flex items-center gap-3">
-                <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-white/10" />
+                <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/15 to-white/10" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-500">
                   Or
                 </span>
-                <span className="h-px flex-1 bg-gradient-to-l from-transparent via-white/15 to-white/10" />
+                <span className="h-px flex-1 bg-linear-to-lrom-transparent via-white/15 to-white/10" />
               </div>
 
               <button
                 onClick={handleGoogleSignup}
                 type="button"
-                className="mt-7 flex w-full items-center justify-center gap-3 rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.28em] text-neutral-300 transition duration-300 hover:border-[#d7b15d]/35 hover:bg-white/[0.06] hover:text-white"
+                className="mt-7 flex w-full items-center justify-center gap-3 rounded-2xl border border-white/8 bg-white/3 px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.28em] text-neutral-300 transition duration-300 hover:border-[#d7b15d]/35 hover:bg-white/6 hover:text-white"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />

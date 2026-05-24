@@ -8,7 +8,7 @@ const API_URL =
 // Only allowed artist/admin emails
 const ALLOWED_EMAILS = [
   "nkanwal.nk@gmail.com",
-  "clientartist@gmail.com",
+  "sk9711162@gmail.com",
 ];
 
 export const authOptions = {

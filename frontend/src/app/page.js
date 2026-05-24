@@ -91,7 +91,7 @@ export default function Home() {
       {/* ─── Hero Section ─── */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <AuroraBackground className="absolute inset-0 z-0 opacity-80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505] z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050505]/50 to-[#050505] z-10" />
         
         <div className="relative z-20 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
           <motion.div
@@ -112,7 +112,7 @@ export default function Home() {
             style={{ fontFamily: 'var(--font-playfair), serif' }}
           >
             Ink That Tells <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F5E6C8] to-[#C5A059]">Your Story.</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFFFFF] via-[#F5E6C8] to-[#C5A059]">Your Story.</span>
           </motion.h1>
 
           <motion.p 
@@ -149,7 +149,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-square lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden border border-white/10"
+              className="relative aspect-square lg:aspect-auto lg:h-150 rounded-3xl overflow-hidden border border-white/10"
             >
               <div className="absolute inset-0 bg-[#C5A059]/10 mix-blend-overlay z-10"></div>
               <img src="/tattoo-artist-bg.png" alt="Artist at work" className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700" />
@@ -285,7 +285,7 @@ export default function Home() {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="lg:w-2/3 relative h-[400px] lg:h-auto min-h-[400px] rounded-2xl overflow-hidden border border-white/10 group">
+            <div className="lg:w-2/3 relative h-100 lg:h-auto min-h-100 rounded-2xl overflow-hidden border border-white/10 group">
               <div className="absolute inset-0 bg-[#C5A059]/10 pointer-events-none z-10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500"></div>
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2527998699!2d-74.14448787425354!3d40.697631233393085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1707255146030!5m2!1sen!2s" 
