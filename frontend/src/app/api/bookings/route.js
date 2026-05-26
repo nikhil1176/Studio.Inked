@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
-// POST: Create a new booking (Public route - proxies to Express backend)
+const API_URL = "https://studio-inked.onrender.com";
+
+// POST: Create a new booking
 export async function POST(req) {
   try {
     const body = await req.json();
+
+    console.log("Booking request:", body);
 
     const response = await fetch(`${API_URL}/api/bookings`, {
       method: "POST",
@@ -14,11 +18,21 @@ export async function POST(req) {
     });
 
     const data = await response.json();
-    return NextResponse.json(data, { status: response.status });
+
+    console.log("Backend response:", data);
+
+    return NextResponse.json(data, {
+      status: response.status,
+    });
   } catch (error) {
     console.error("Booking proxy error:", error);
+
     return NextResponse.json(
-      { success: false, message: "Server connection failed." },
+      {
+        success: false,
+        message: "Server connection failed",
+        error: error.message,
+      },
       { status: 500 }
     );
   }

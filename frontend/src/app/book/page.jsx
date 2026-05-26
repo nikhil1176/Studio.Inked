@@ -257,7 +257,7 @@ export default function BookingPage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
-                className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#C5A059] to-[#8B6914] flex items-center justify-center shadow-lg shadow-[#C5A059]/20 mb-6"
+                className="w-20 h-20 mx-auto rounded-full bg-linear-to-br from-[#C5A059] to-[#8B6914] flex items-center justify-center shadow-lg shadow-[#C5A059]/20 mb-6"
               >
                 <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
