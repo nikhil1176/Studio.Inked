@@ -7,13 +7,14 @@ import { BackgroundGradient } from "../components/BackgroundGradient";
 
 // ─── Luxury Admin Navbar ─────────────────────────────────────────────
 function AdminNavbar({ bookings, session, filterStatus, setFilterStatus }) {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState(null);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const profileRef = useRef(null);
 
-  // Live clock
+  // Live clock - initialize on mount to avoid hydration mismatch
   useEffect(() => {
+    setCurrentTime(new Date());
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
@@ -52,16 +53,16 @@ function AdminNavbar({ bookings, session, filterStatus, setFilterStatus }) {
     .toUpperCase()
     .slice(0, 2);
 
-  const formattedTime = currentTime.toLocaleTimeString("en-US", {
+  const formattedTime = currentTime ? currentTime.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-  });
-  const formattedDate = currentTime.toLocaleDateString("en-US", {
+  }) : "--:--";
+  const formattedDate = currentTime ? currentTime.toLocaleDateString("en-US", {
     weekday: "short",
     month: "short",
     day: "numeric",
-  });
+  }) : "---";
 
   return (
     <>

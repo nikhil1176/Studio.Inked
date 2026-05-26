@@ -305,7 +305,7 @@ export default function Home() {
 
       {/* ─── Footer ─── */}
       <footer className="py-8 border-t border-white/5 bg-[#030303] text-center">
-        <p className="text-[10px] uppercase tracking-widest text-neutral-600 font-bold">
+        <p className="text-[10px] uppercase tracking-widest text-neutral-600 font-bold" suppressHydrationWarning>
           &copy; {new Date().getFullYear()} Studio.Inked. All Rights Reserved.
         </p>
       </footer>

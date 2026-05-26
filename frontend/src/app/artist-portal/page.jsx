@@ -151,7 +151,7 @@ export default function LoginPage() {
   return (
     <main className="relative min-h-screen overflow-hidden text-white" style={{ backgroundColor: '#000' }}>
 
-      <style jsx global>{`
+      <style>{`
         @keyframes loginRise {
           0% {
             opacity: 0;
