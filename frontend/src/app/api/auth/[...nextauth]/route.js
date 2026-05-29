@@ -9,6 +9,7 @@ const API_URL =
 const ALLOWED_EMAILS = [
   "nkanwal.nk@gmail.com",
   "sk9711162@gmail.com",
+  "admin123@gmail.com"
 ];
 
 export const authOptions = {
@@ -26,26 +27,44 @@ export const authOptions = {
       },
 
       async authorize(credentials) {
-        const res = await fetch(`${API_URL}/api/auth`, {
-          method: "POST",
-          body: JSON.stringify(credentials),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        console.log("1. Fetching from API:", `${API_URL}/api/auth/artist-portal`);
+        
+        try {
+          const res = await fetch(`${API_URL}/api/auth/artist-portal`, {
+            method: "POST",
+            body: JSON.stringify(credentials),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
 
-        const user = await res.json();
+          console.log("2. Backend se Status Code aaya:", res.status);
+          const responseBody = await res.json();
+          console.log("3. Backend se Data aaya:", responseBody);
 
-        if (res.ok && user) {
-          // Allow only approved emails
-          if (!ALLOWED_EMAILS.includes(user.email)) {
-            throw new Error("Unauthorized access");
+          // Ensure response is OK aur uske andar 'data' exist karta hai
+          if (res.ok && responseBody.success && responseBody.data) {
+            
+            const userData = responseBody.data; // <-- Asli user details yahan hain
+
+            // Allow only approved emails
+            if (!ALLOWED_EMAILS.includes(userData.email)) {
+              console.log("4. ERROR: Email ALLOWED_EMAILS me nahi hai!");
+              throw new Error("Unauthorized access");
+            }
+            
+            console.log("5. Login Success frontend par!");
+            // NextAuth ko EXACTLY sirf user object (id, name, email) dena hota hai
+            return userData; 
           }
 
-          return user;
-        }
+          console.log("4. ERROR: res.ok false hai ya user nahi mila");
+          return null;
 
-        return null;
+        } catch (error) {
+          console.log("FETCH ERROR:", error.message);
+          return null;
+        }
       },
     }),
   ],
