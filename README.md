@@ -18,7 +18,7 @@ Clients book online → Artists manage from a dashboard → Everyone's happy.
 
 <br/>
 
-[Report Bug](https://github.com/nikhil1176/Studio.Inked/issues) · [Request Feature](https://github.com/nikhil1176/Studio.Inked/issues)
+[View Demo](https://studio-inked.vercel.app/) · [Report Bug](https://github.com/nikhil1176/Studio.Inked/issues) · [Request Feature](https://github.com/nikhil1176/Studio.Inked/issues)
 
 ---
 
