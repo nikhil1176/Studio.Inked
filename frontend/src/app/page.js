@@ -29,12 +29,12 @@ const services = [
 ];
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1611501275019-9b5c156f0601?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1582293041079-792f39c28cc8?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1616788812686-30237e193fb6?q=80&w=600&auto=format&fit=crop",
+  "/gallery-1.jpg",
+  "/gallery-2.jpg",
+  "/gallery-3.jpg",
+  "/gallery-4.jpg",
+  "/gallery-5.jpg",
+  "/gallery-6.jpg",
 ];
 
 export default function Home() {
@@ -89,54 +89,76 @@ export default function Home() {
       </nav>
 
       {/* ─── Hero Section ─── */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <AuroraBackground className="absolute inset-0 z-0 opacity-80" />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050505]/50 to-[#050505] z-10" />
         
-        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
+        <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left Side — Hero Image */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="inline-flex items-center gap-3 border border-[#C5A059]/30 bg-[#C5A059]/10 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative hidden lg:block"
           >
-            <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse"></span>
-            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#E8D5A3]">Now Accepting New Clients</span>
+            <div className="relative aspect-[3/4] max-h-[75vh] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+              <div className="absolute inset-0 bg-[#C5A059]/10 mix-blend-overlay z-10"></div>
+              <img src="/tattoo-hero.jpg" alt="Tattoo artist at work" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.7)] z-20 pointer-events-none"></div>
+            </div>
+            {/* Floating accent badge */}
+            <div className="absolute -bottom-4 -right-4 bg-[#C5A059] text-black px-5 py-3 rounded-2xl shadow-[0_10px_30px_rgba(197,160,89,0.3)] z-30">
+              <p className="text-[9px] font-bold uppercase tracking-[0.3em]">Est. 2020</p>
+              <p className="text-lg font-black" style={{ fontFamily: 'var(--font-playfair), serif' }}>5k+ Clients</p>
+            </div>
           </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-6 drop-shadow-2xl" 
-            style={{ fontFamily: 'var(--font-playfair), serif' }}
-          >
-            Ink That Tells <br/>
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFFFFF] via-[#F5E6C8] to-[#C5A059]">Your Story.</span>
-          </motion.h1>
+          {/* Right Side — Text Content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="inline-flex items-center gap-3 border border-[#C5A059]/30 bg-[#C5A059]/10 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse"></span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#E8D5A3]">Now Accepting New Clients</span>
+            </motion.div>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="max-w-2xl text-neutral-400 text-sm md:text-base font-light tracking-wide leading-relaxed mb-10"
-          >
-            Welcome to Studio Inked. We specialize in custom, high-end tattoos designed to last a lifetime. Submit your idea, consult with our artists, and let's create a masterpiece.
-          </motion.p>
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-6 drop-shadow-2xl" 
+              style={{ fontFamily: 'var(--font-playfair), serif' }}
+            >
+              Ink That Tells <br/>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFFFFF] via-[#F5E6C8] to-[#C5A059]">Your Story.</span>
+            </motion.h1>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <Link href="/book" className="bg-[#C5A059] text-black px-8 py-4 rounded-xl text-xs font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(197,160,89,0.2)] hover:shadow-[0_15px_40px_rgba(197,160,89,0.4)] hover:-translate-y-1 transition-all duration-300">
-              Request Consultation
-            </Link>
-            <a href="#gallery" onClick={(e) => smoothScroll(e, 'gallery')} className="border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 rounded-xl text-xs font-black uppercase tracking-[0.3em] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 flex items-center justify-center">
-              View Portfolio
-            </a>
-          </motion.div>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="max-w-2xl text-neutral-400 text-sm md:text-base font-light tracking-wide leading-relaxed mb-10"
+            >
+              Welcome to Studio Inked. We specialize in custom, high-end tattoos designed to last a lifetime. Submit your idea, consult with our artists, and let&apos;s create a masterpiece.
+            </motion.p>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Link href="/book" className="bg-[#C5A059] text-black px-8 py-4 rounded-xl text-xs font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(197,160,89,0.2)] hover:shadow-[0_15px_40px_rgba(197,160,89,0.4)] hover:-translate-y-1 transition-all duration-300">
+                Request Consultation
+              </Link>
+              <a href="#gallery" onClick={(e) => smoothScroll(e, 'gallery')} className="border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 rounded-xl text-xs font-black uppercase tracking-[0.3em] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 flex items-center justify-center">
+                View Portfolio
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
